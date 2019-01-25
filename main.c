@@ -48,6 +48,7 @@
 
 
 static uint8_t led_anim[] = {
+	/*
 	0b00000000,
 	0b11111111,
 	0b11111110,
@@ -63,6 +64,13 @@ static uint8_t led_anim[] = {
 	0b00100000,
 	0b00010000,
 	0b00001000
+	*/
+	0b00000101,
+	0b10000101,
+	0b01000101,
+	0b00100101,
+	0b00010101,
+	0b00001101
 };
 
 
@@ -85,6 +93,7 @@ void main(void)
     //INTERRUPT_GlobalInterruptDisable();
 	
 	uint8_t i = 0;
+	uint8_t c = 0;
 	
 	//LATC = 0xFF;
 	//LATC = 0b11111000;
@@ -92,15 +101,28 @@ void main(void)
 	
     while (1)
     {
-        LATC = led_anim[i];
-		
-		i += 1;
+		c += 1;
+		if (c > 3)
+		{
+			LATC = led_anim[i];
+			i += 1;
+			c = 0;
+		}
 		if (i >= sizeof(led_anim))
 		{
 			i = 0;
 		}
 		
-		__delay_ms(333);
+		if (M3D_GP0_GetValue())
+		{
+			LATC = 0b11111011;
+		}
+		if (M3D_GP1_GetValue())
+		{
+			LATC = 0b11111110;
+		}
+		
+		__delay_ms(90);
     }
 }
 

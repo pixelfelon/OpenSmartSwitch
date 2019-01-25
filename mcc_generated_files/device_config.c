@@ -48,7 +48,7 @@
 
 // CONFIG1L
 #pragma config FEXTOSC = OFF    // External Oscillator Selection->Oscillator not enabled
-#pragma config RSTOSC = HFINTOSC_1MHZ    // Reset Oscillator Selection->HFINTOSC with HFFRQ = 4 MHz and CDIV = 4:1
+#pragma config RSTOSC = LFINTOSC    // Reset Oscillator Selection->Low-Frequency Oscillator
 
 // CONFIG1H
 #pragma config CLKOUTEN = OFF    // Clock out Enable bit->CLKOUT function is disabled
@@ -62,7 +62,7 @@
 #pragma config MVECEN = OFF    // Multi-vector enable bit->Interrupt contoller does not use vector table to prioritze interrupts
 #pragma config IVT1WAY = ON    // IVTLOCK bit One-way set enable bit->IVTLOCK bit can be cleared and set only once
 #pragma config LPBOREN = OFF    // Low Power BOR Enable bit->ULPBOR disabled
-#pragma config BOREN = SBORDIS    // Brown-out Reset Enable bits->Brown-out Reset enabled , SBOREN bit is ignored
+#pragma config BOREN = OFF    // Brown-out Reset Enable bits->Brown-out Reset disabled
 
 // CONFIG2H
 #pragma config BORV = VBOR_190    // Brown-out Reset Voltage Selection bits->Brown-out Reset Voltage (VBOR) set to 1.90V
