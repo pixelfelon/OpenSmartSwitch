@@ -23,7 +23,7 @@ static uint8_t animation_swipe_down_states[] = {
 	0b01000001,
 	0b00100001,
 	0b00010001,
-	0b00001001
+	ANIMATION_SWIPE_DOWN_FINAL
 };
 anim_t animation_swipe_down = {
 	sizeof(animation_swipe_down_states),
@@ -37,7 +37,7 @@ static uint8_t animation_swipe_up_states[] = {
 	0b00010001,
 	0b00100001,
 	0b01000001,
-	0b10000001
+	ANIMATION_SWIPE_UP_FINAL
 };
 anim_t animation_swipe_up = {
 	sizeof(animation_swipe_up_states),

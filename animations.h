@@ -18,6 +18,10 @@
 #include "anim.h"
 
 
+#define ANIMATION_SWIPE_UP_FINAL   0b10000101
+#define ANIMATION_SWIPE_DOWN_FINAL 0b00001011
+
+
 #ifdef	__cplusplus
 extern "C" {
 #endif
