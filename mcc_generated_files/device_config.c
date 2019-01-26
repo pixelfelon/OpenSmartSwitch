@@ -48,7 +48,7 @@
 
 // CONFIG1L
 #pragma config FEXTOSC = OFF    // External Oscillator Selection->Oscillator not enabled
-#pragma config RSTOSC = LFINTOSC    // Reset Oscillator Selection->Low-Frequency Oscillator
+#pragma config RSTOSC = HFINTOSC_1MHZ    // Reset Oscillator Selection->HFINTOSC with HFFRQ = 4 MHz and CDIV = 4:1
 
 // CONFIG1H
 #pragma config CLKOUTEN = OFF    // Clock out Enable bit->CLKOUT function is disabled
@@ -59,7 +59,7 @@
 // CONFIG2L
 #pragma config MCLRE = EXTMCLR    // MCLR Enable bit->If LVP = 0, MCLR pin is MCLR; If LVP = 1, RE3 pin function is MCLR 
 #pragma config PWRTS = PWRT_OFF    // Power-up timer selection bits->PWRT is disabled
-#pragma config MVECEN = OFF    // Multi-vector enable bit->Interrupt contoller does not use vector table to prioritze interrupts
+#pragma config MVECEN = ON    // Multi-vector enable bit->Multi-vector enabled, Vector table used for interrupts
 #pragma config IVT1WAY = ON    // IVTLOCK bit One-way set enable bit->IVTLOCK bit can be cleared and set only once
 #pragma config LPBOREN = OFF    // Low Power BOR Enable bit->ULPBOR disabled
 #pragma config BOREN = OFF    // Brown-out Reset Enable bits->Brown-out Reset disabled
